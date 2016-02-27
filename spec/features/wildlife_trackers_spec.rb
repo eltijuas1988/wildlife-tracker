@@ -10,11 +10,22 @@ RSpec.feature "WildlifeTrackers", type: :feature do
     end
 
     it "I can create a species and save it in the database from the home page" do
-      visit '/'
-      fill_in 'Name', with: 'Deer'
-      click_button 'Save'
+      create_animal('Deer')
       expect(Species.first).to be_a (Species)
       #need to match the recently created model species to the db
+    end
+
+    it "I can list all species in a database" do
+      create_animal('Deer')
+      create_animal('Bear')
+      expect(Species.first.name).to eq('Deer')
+      expect(Species.second.name).to eq('Bear')
+    end
+
+    def create_animal(species)
+      visit '/'
+      fill_in 'Name', with: species
+      click_button 'Save'
     end
 
   end
