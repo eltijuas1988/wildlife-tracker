@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   get 'species/index'
 
-  get 'species/create'
+  post 'species/create'
 
   get 'species/edit'
 
-  get 'species/destroy'
+  delete 'species/destroy'
 
-  get 'species/update'
+  patch 'species/update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'species#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

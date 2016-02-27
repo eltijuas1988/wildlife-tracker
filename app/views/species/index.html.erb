@@ -1,2 +1,9 @@
 <h1>Species#index</h1>
-<p>Find me in app/views/species/index.html.erb</p>
+<h3>Welcome to the home page</h3>
+
+
+<form action="/species/create" method="post">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name" placeholder="Animal name" autofocus required/>
+  <input type="submit" value="Save" />
+</form>
